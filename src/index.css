@@ -1,0 +1,266 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   GOOGLE FONTS — carregadas via index.html para performance
+   ============================================================ */
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES — Design Tokens Bernardi
+   ============================================================ */
+:root {
+  --color-bg: #FFFFFF;
+  --color-surface: #F4F5F7;
+  --color-primary: #1B3A6B;
+  --color-primary-hover: #142D55;
+  --color-text-main: #1A1A2E;
+  --color-text-secondary: #5A6478;
+  --color-accent: #E8A020;
+  --color-whatsapp: #25D366;
+  --color-border: #DDE1EA;
+  --color-footer-bg: #0D1B36;
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --shadow-card: 0 2px 12px rgba(0,0,0,0.08);
+  --shadow-card-hover: 0 8px 24px rgba(0,0,0,0.14);
+  --shadow-header: 0 2px 16px rgba(0,0,0,0.08);
+  --shadow-whatsapp: 0 4px 16px rgba(37,211,102,0.4);
+  --shadow-btn: 0 4px 16px rgba(27,58,107,0.3);
+
+  --radius-btn: 6px;
+  --radius-card: 8px;
+  --container-max: 1200px;
+  --section-py: 96px;
+  --section-py-mobile: 60px;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-text-main);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================
+   FONT DISPLAY SWAP — performance
+   ============================================================ */
+@font-face {
+  font-display: swap;
+}
+
+/* ============================================================
+   CONTAINER UTILITÁRIO
+   ============================================================ */
+.container-site {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media (max-width: 768px) {
+  .container-site {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* ============================================================
+   SECTION PADDING UTILITÁRIO
+   ============================================================ */
+.section-py {
+  padding-top: var(--section-py);
+  padding-bottom: var(--section-py);
+}
+
+@media (max-width: 768px) {
+  .section-py {
+    padding-top: var(--section-py-mobile);
+    padding-bottom: var(--section-py-mobile);
+  }
+}
+
+/* ============================================================
+   ANIMAÇÕES DE ENTRADA — IntersectionObserver
+   ============================================================ */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   ACCORDION FAQ
+   ============================================================ */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.faq-answer.open {
+  max-height: 400px;
+}
+
+/* ============================================================
+   PORTFOLIO FILTER PILLS
+   ============================================================ */
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border: 1.5px solid var(--color-primary);
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filter-pill:hover,
+.filter-pill.active {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+/* ============================================================
+   HEADER SCROLL TRANSITION
+   ============================================================ */
+.header-scrolled {
+  background: #FFFFFF !important;
+  box-shadow: var(--shadow-header) !important;
+}
+
+.header-scrolled .nav-link {
+  color: var(--color-text-main) !important;
+}
+
+.header-scrolled .logo-text {
+  color: var(--color-primary) !important;
+}
+
+.header-scrolled .logo-sub {
+  color: var(--color-text-secondary) !important;
+}
+
+.header-scrolled .header-cta {
+  background: var(--color-primary) !important;
+  color: #FFFFFF !important;
+}
+
+/* ============================================================
+   MOBILE DRAWER
+   ============================================================ */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.drawer-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 280px;
+  background: var(--color-primary);
+  z-index: 9999;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  padding: 24px;
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+/* ============================================================
+   TESTIMONIALS MOBILE CAROUSEL
+   ============================================================ */
+@media (max-width: 768px) {
+  .testimonials-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .testimonials-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testimonials-carousel > * {
+    scroll-snap-align: start;
+    flex: 0 0 calc(100% - 32px);
+  }
+}
+
+/* ============================================================
+   FORM INPUTS SEÇÃO CTA
+   ============================================================ */
+.cta-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius-btn);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.cta-input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.cta-input:focus {
+  border-color: var(--color-accent);
+}
+
+.cta-select option {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
