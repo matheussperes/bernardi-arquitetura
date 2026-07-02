@@ -3,34 +3,30 @@
 @tailwind utilities;
 
 /* ============================================================
-   GOOGLE FONTS — carregadas via index.html para performance
-   ============================================================ */
-
-/* ============================================================
-   CSS CUSTOM PROPERTIES — Design Tokens Bernardi
+   CSS CUSTOM PROPERTIES — Design Tokens Camila Bernardi
    ============================================================ */
 :root {
   --color-bg: #FFFFFF;
-  --color-surface: #F4F5F7;
-  --color-primary: #1B3A6B;
-  --color-primary-hover: #142D55;
-  --color-text-main: #1A1A2E;
-  --color-text-secondary: #5A6478;
-  --color-accent: #E8A020;
+  --color-surface: #FAF8F5;
+  --color-primary: #2C2C2C;
+  --color-primary-hover: #1a1a1a;
+  --color-text-main: #1C1C1C;
+  --color-text-secondary: #6B6B6B;
+  --color-accent: #C9A96E;
   --color-whatsapp: #25D366;
-  --color-border: #DDE1EA;
-  --color-footer-bg: #0D1B36;
+  --color-border: #E8E2D9;
+  --color-footer-bg: #1A1A1A;
 
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  --shadow-card: 0 2px 12px rgba(0,0,0,0.08);
-  --shadow-card-hover: 0 8px 24px rgba(0,0,0,0.14);
-  --shadow-header: 0 2px 16px rgba(0,0,0,0.08);
+  --shadow-card: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-card-hover: 0 8px 24px rgba(0,0,0,0.12);
+  --shadow-header: 0 2px 16px rgba(0,0,0,0.06);
   --shadow-whatsapp: 0 4px 16px rgba(37,211,102,0.4);
-  --shadow-btn: 0 4px 16px rgba(27,58,107,0.3);
+  --shadow-btn: 0 4px 16px rgba(44,44,44,0.25);
 
-  --radius-btn: 6px;
+  --radius-btn: 4px;
   --radius-card: 8px;
   --container-max: 1200px;
   --section-py: 96px;
@@ -60,15 +56,12 @@ body {
   padding: 0;
 }
 
-/* ============================================================
-   FONT DISPLAY SWAP — performance
-   ============================================================ */
 @font-face {
   font-display: swap;
 }
 
 /* ============================================================
-   CONTAINER UTILITÁRIO
+   CONTAINER
    ============================================================ */
 .container-site {
   width: 100%;
@@ -87,7 +80,7 @@ body {
 }
 
 /* ============================================================
-   SECTION PADDING UTILITÁRIO
+   SECTION PADDING
    ============================================================ */
 .section-py {
   padding-top: var(--section-py);
@@ -102,7 +95,7 @@ body {
 }
 
 /* ============================================================
-   ANIMAÇÕES DE ENTRADA — IntersectionObserver
+   ANIMAÇÕES
    ============================================================ */
 .animate-on-scroll {
   opacity: 0;
@@ -116,7 +109,7 @@ body {
 }
 
 /* ============================================================
-   ACCORDION FAQ
+   FAQ ACCORDION
    ============================================================ */
 .faq-answer {
   max-height: 0;
@@ -154,7 +147,7 @@ body {
 }
 
 /* ============================================================
-   HEADER SCROLL TRANSITION
+   HEADER SCROLL
    ============================================================ */
 .header-scrolled {
   background: #FFFFFF !important;
@@ -214,7 +207,7 @@ body {
 }
 
 /* ============================================================
-   TESTIMONIALS MOBILE CAROUSEL
+   TESTIMONIALS MOBILE
    ============================================================ */
 @media (max-width: 768px) {
   .testimonials-carousel {
@@ -237,7 +230,7 @@ body {
 }
 
 /* ============================================================
-   FORM INPUTS SEÇÃO CTA
+   FORM INPUTS CTA
    ============================================================ */
 .cta-input {
   width: 100%;

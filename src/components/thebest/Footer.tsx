@@ -16,7 +16,7 @@ export default function Footer() {
   }
 
   return (
-    <footer style={{ background: '#0D1B36' }}>
+    <footer style={{ background: '#1A1A1A' }}>
       {/* Main footer */}
       <div className="container-site py-14 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -24,10 +24,10 @@ export default function Footer() {
           {/* Col 1 — Brand */}
           <div>
             <p className="font-heading font-bold text-white text-xl tracking-wide mb-1">
-              BERNARDI
+              CAMILA BERNARDI
             </p>
             <p className="font-body text-white/50 text-sm mb-5">
-              Arquitetura & Engenharia · Taubaté e Região
+              Arquiteta · Taubaté e Região
             </p>
             <p className="font-body text-white/60 text-sm leading-relaxed">
               Do projeto à obra — arquitetura e engenharia civil completa com uma
@@ -57,7 +57,7 @@ export default function Footer() {
           {/* Col 3 — Contato */}
           <div>
             <p className="font-body font-semibold text-white text-sm uppercase tracking-wider mb-5">
-              Fale Conosco
+              Fale Comigo
             </p>
             <div className="flex flex-col gap-4">
               <a
@@ -105,14 +105,14 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div style={{ background: 'rgba(0,0,0,0.2)' }}>
+      <div style={{ background: 'rgba(0,0,0,0.25)' }}>
         <div className="container-site py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="font-body text-white/40 text-xs text-center sm:text-left">
             © {new Date().getFullYear()} {siteConfig.company}. Todos os direitos reservados.
           </p>
           <p className="font-body text-white/30 text-xs">
             Site criado por{' '}
-            <span className="text-accent/70">The Best</span>
+            <span style={{ color: '#C9A96E', opacity: 0.8 }}>Oren. Digital</span>
           </p>
         </div>
       </div>
