@@ -5,6 +5,7 @@ import WhatsAppFloatingButton from '@/components/thebest/WhatsAppFloatingButton'
 import Hero from '@/sections/Hero'
 import ProofBar from '@/sections/ProofBar'
 import Portfolio from '@/sections/Portfolio'
+import EditorialStrip from '@/sections/EditorialStrip'
 import Testimonials from '@/sections/Testimonials'
 import Differentials from '@/sections/Differentials'
 import FAQ from '@/sections/FAQ'
@@ -46,16 +47,19 @@ export default function Home() {
         {/* 3. Portfolio — objetivo secundário: ver obras reais */}
         <Portfolio />
 
-        {/* 4. Testimonials — prova social qualitativa */}
+        {/* 4. Faixa Editorial — pausa emocional / atmosfera de arquitetura */}
+        <EditorialStrip />
+
+        {/* 5. Testimonials — prova social qualitativa */}
         <Testimonials />
 
-        {/* 5. Differentials — por que Bernardi vs. concorrentes */}
+        {/* 6. Differentials — por que Bernardi vs. concorrentes */}
         <Differentials />
 
-        {/* 6. FAQ — eliminar últimas objeções */}
+        {/* 7. FAQ — eliminar últimas objeções */}
         <FAQ />
 
-        {/* 7. CTA Final — última chance de conversão */}
+        {/* 8. CTA Final — última chance de conversão */}
         <CTAFinal />
       </main>
 
