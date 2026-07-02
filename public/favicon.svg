@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Fundo azul arredondado -->
+  <rect width="32" height="32" rx="6" fill="#1B3A6B"/>
+  <!-- Letra B em branco, Poppins-style (bold, centrada) -->
+  <text
+    x="16"
+    y="23"
+    font-family="Georgia, serif"
+    font-size="20"
+    font-weight="700"
+    fill="#FFFFFF"
+    text-anchor="middle"
+    letter-spacing="-0.5"
+  >B</text>
+  <!-- Ponto dourado — diferencial visual -->
+  <circle cx="21" cy="22" r="2.2" fill="#E8A020"/>
+</svg>
