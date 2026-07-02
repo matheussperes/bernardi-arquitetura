@@ -58,11 +58,34 @@ export default function FAQ() {
   const toggle = (id: number) => setOpenId(openId === id ? null : id)
 
   return (
-    <section id="faq" className="section-py bg-surface">
-      <div className="container-site">
+    <section
+      id="faq"
+      className="section-py relative overflow-hidden"
+    >
+      {/* Imagem de fundo arquitetônica */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/assets/faq-bg.jpg')" }}
+        aria-hidden="true"
+      />
+      {/* Overlay duplo: branco suave + textura */}
+      <div
+        className="absolute inset-0"
+        style={{ background: 'rgba(244,245,247,0.93)' }}
+        aria-hidden="true"
+      />
+
+      {/* Conteúdo */}
+      <div className="container-site relative z-10">
 
         {/* Header */}
         <div className="text-center mb-12">
+          <p
+            className="font-body font-semibold uppercase tracking-[3px] text-xs mb-3"
+            style={{ color: '#E8A020' }}
+          >
+            Tire suas dúvidas
+          </p>
           <h2
             className="font-heading font-semibold text-text-main mb-3"
             style={{ fontSize: 'clamp(26px, 4vw, 36px)' }}
@@ -76,46 +99,56 @@ export default function FAQ() {
 
         {/* Accordion */}
         <div className="max-w-faq mx-auto">
-          {faqs.map((faq) => {
-            const isOpen = openId === faq.id
-            return (
-              <div
-                key={faq.id}
-                className="border-b border-border last:border-b-0"
-              >
-                <button
-                  onClick={() => toggle(faq.id)}
-                  className="w-full flex items-center justify-between gap-4 py-5 text-left"
-                  aria-expanded={isOpen}
-                  aria-controls={`faq-answer-${faq.id}`}
-                >
-                  <span
-                    className={`font-body font-semibold text-base transition-colors duration-200 ${
-                      isOpen ? 'text-primary' : 'text-text-main'
-                    }`}
-                  >
-                    {faq.question}
-                  </span>
-                  <span
-                    className="flex-shrink-0 text-primary transition-transform duration-300"
-                    style={{ transform: isOpen ? 'rotate(0deg)' : '' }}
-                    aria-hidden="true"
-                  >
-                    {isOpen ? <Minus size={20} /> : <Plus size={20} />}
-                  </span>
-                </button>
-
+          {/* Card que envolve o accordion — vidro fosco */}
+          <div
+            className="rounded-card overflow-hidden"
+            style={{
+              background: 'rgba(255,255,255,0.85)',
+              backdropFilter: 'blur(8px)',
+              boxShadow: '0 4px 32px rgba(27,58,107,0.10)',
+            }}
+          >
+            {faqs.map((faq, index) => {
+              const isOpen = openId === faq.id
+              return (
                 <div
-                  id={`faq-answer-${faq.id}`}
-                  className={`faq-answer ${isOpen ? 'open' : ''}`}
+                  key={faq.id}
+                  className={index < faqs.length - 1 ? 'border-b border-border' : ''}
                 >
-                  <p className="font-body text-text-secondary text-sm leading-[1.75] pb-5">
-                    {faq.answer}
-                  </p>
+                  <button
+                    onClick={() => toggle(faq.id)}
+                    className="w-full flex items-center justify-between gap-4 px-7 py-5 text-left"
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${faq.id}`}
+                  >
+                    <span
+                      className={`font-body font-semibold text-base transition-colors duration-200 ${
+                        isOpen ? 'text-primary' : 'text-text-main'
+                      }`}
+                    >
+                      {faq.question}
+                    </span>
+                    <span
+                      className="flex-shrink-0 transition-colors duration-200"
+                      style={{ color: isOpen ? '#E8A020' : '#1B3A6B' }}
+                      aria-hidden="true"
+                    >
+                      {isOpen ? <Minus size={20} /> : <Plus size={20} />}
+                    </span>
+                  </button>
+
+                  <div
+                    id={`faq-answer-${faq.id}`}
+                    className={`faq-answer ${isOpen ? 'open' : ''}`}
+                  >
+                    <p className="font-body text-text-secondary text-sm leading-[1.75] px-7 pb-5">
+                      {faq.answer}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
       </div>
     </section>
