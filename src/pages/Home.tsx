@@ -4,6 +4,7 @@ import Footer from '@/components/thebest/Footer'
 import WhatsAppFloatingButton from '@/components/thebest/WhatsAppFloatingButton'
 import Hero from '@/sections/Hero'
 import ProofBar from '@/sections/ProofBar'
+import About from '@/sections/About'
 import Portfolio from '@/sections/Portfolio'
 import EditorialStrip from '@/sections/EditorialStrip'
 import Testimonials from '@/sections/Testimonials'
@@ -12,7 +13,6 @@ import FAQ from '@/sections/FAQ'
 import CTAFinal from '@/sections/CTAFinal'
 
 export default function Home() {
-  // IntersectionObserver para animações de entrada
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -33,40 +33,38 @@ export default function Home() {
 
   return (
     <>
-      {/* ── HEADER (fixo, fora do fluxo) ── */}
       <Header />
 
-      {/* ── MAIN ── */}
       <main>
-        {/* 1. Hero — objetivo primário: WhatsApp */}
+        {/* 1. Hero */}
         <Hero />
 
-        {/* 2. Proof Bar — credibilidade imediata */}
+        {/* 2. Proof Bar */}
         <ProofBar />
 
-        {/* 3. Portfolio — objetivo secundário: ver obras reais */}
+        {/* 3. Sobre a Camila */}
+        <About />
+
+        {/* 4. Portfolio */}
         <Portfolio />
 
-        {/* 4. Faixa Editorial — pausa emocional / atmosfera de arquitetura */}
+        {/* 5. Faixa Editorial */}
         <EditorialStrip />
 
-        {/* 5. Testimonials — prova social qualitativa */}
+        {/* 6. Testimonials */}
         <Testimonials />
 
-        {/* 6. Differentials — por que Bernardi vs. concorrentes */}
+        {/* 7. Differentials */}
         <Differentials />
 
-        {/* 7. FAQ — eliminar últimas objeções */}
+        {/* 8. FAQ */}
         <FAQ />
 
-        {/* 8. CTA Final — última chance de conversão */}
+        {/* 9. CTA Final */}
         <CTAFinal />
       </main>
 
-      {/* ── FOOTER ── */}
       <Footer />
-
-      {/* ── WHATSAPP FIXO — sempre visível ── */}
       <WhatsAppFloatingButton />
     </>
   )
